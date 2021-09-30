@@ -1,0 +1,388 @@
+<html>
+    <head>
+        <title>IIS Viola Marchesini Rovigo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Modal con iframe -->
+        <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding: 0;">
+                  <iframe id="modal_iframe" style="width: 100%; height: 80vh;">
+
+                  </iframe>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Info privacy -->
+        <div class="offcanvas show offcanvas-bottom bg-secondary text-light">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title">Informativa sulla privacy</h5>
+            </div>
+            <div class="offcanvas-body small">
+                Questo sito o gli strumenti terzi da questo utilizzati si avvalgono di cookie necessari al funzionamento ed utili alle finalità illustrate nella cookie policy.
+                Se vuoi saperne di più o negare il consenso a tutti o ad alcuni cookie, consulta la <a href="#" onclick="openModal('http://www.iubenda.com/privacy-policy/13286193')">privacy policy.</a><br>
+                Chiudendo questo banner, scorrendo questa pagina, cliccando su un link o proseguendo la navigazione in altra maniera, acconsenti all’uso dei cookie.<br><br>
+                <button type="button" class="btn btn-outline-light" data-bs-dismiss="offcanvas">Accetta e chiudi</button>
+            </div>
+          </div>
+        <!-- Navbar -->
+        <nav id="navbar" class="navbar shadow navbar-expand-lg sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a id="theme_changer" class="nav-link">
+                      <svg id="darkmode_icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                      </svg>
+                      <svg id="lightmode_icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1e2125" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                          <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                      </svg>
+                    </a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          La scuola
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Albo Online (fino A.S. 2015-2016)</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Calendario Scolastico 2020-2021</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Cenni storici</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Codice disciplinare e di condotta</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Contatti</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Coordinate bancarie</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Consiglio di Istituto</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Monitoraggio attività scolastiche</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Orario A.S. 2021-2022</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Organigramma</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Piano annuale delle attività A.S. 2021-2022</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Plessi</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Politica della qualità</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">PTOF 2019-2022</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">PCTO - Percorsi per le competenze trasversali e l'orientamento</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Rapporto di Autovalutazione 2020-2021</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Genitori
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Modulistica</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Libri di test</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Studenti
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Riforma</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Modulistica/Studenti</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Docenti
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Modulistica</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Orario 2021</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Didattica a distanza</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Comunicazioni</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Verbali e materiale CdD</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Comitato di valutazione</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">BES Info</a></li> 
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Personale ATA
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Modulistica ATA</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Amministrazione</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Orientamento 2020-21
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Orientamento in entrata</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          ECDL
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Certificazione ECDL classi prime</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Certificazione ECDL classi II, III, IV e V</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Nuova ECDL</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">ECDL CAD 2D e 3D</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Calendario corsi ed esami</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Iscrizione Esami</a></li>
+                          <li><a class="dropdown-item text-dark" href="#">Area Riservata</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Cisco Academy
+                        </a>
+                        <ul class="dropdown-menu bg-light" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item text-dark" href="#">Informazioni Corso I.T. Essentials 5.0</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+          <div class="card d-block d-xl-none">
+            <div class="card-header">
+              <form class="d-flex" onsubmit="openModal('https://www.iisviolamarchesini.edu.it/j2/component/search/?searchword=' + document.getElementById('search_bar').value + '&searchphrase=all');">
+                <input class="form-control me-2" type="search" id="search_bar" placeholder="Cerca">
+                <button class="btn btn-dark" type="button" onclick="openModal('https://www.iisviolamarchesini.edu.it/j2/component/search/?searchword=' + document.getElementById('search_bar').value + '&searchphrase=all');">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </button>
+              </form>
+            </div>
+            <div class="card-body">
+
+              <p>
+                <h6><a data-bs-toggle="collapse" href="#risorse_online" role="button">Risorse online</a></h6>
+              </p>
+              <div class="collapse" id="risorse_online">
+                <ul>
+                  <li><a href="https://web.spaggiari.eu/home/app/default/login.php?target=cvv&custcode=ROIT0003">Classeviva</a></li>
+                  <li><a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&hd=iisviolamarchesini.edu.it">Google Workspace</a></li>
+                  <li><a href="https://web.spaggiari.eu/home/app/default/login.php?target=sct&custcode=ROIT0003">Scuola e Territorio</a></li>
+                </ul>
+              </div>
+
+              <p>
+                <h6><a data-bs-toggle="collapse" href="#plessi" role="button">Plessi</a></h6>
+              </p>
+              <div class="collapse" id="plessi">
+                <ul>
+                  <li><a href="#">I.I.S. "Viola-Marchesini"</a></li>
+                  <li><a href="#">ITA "O. Munerati"</a></li>
+                  <li><a href="#">ITG "A. Bernini"</a></li>
+                </ul>
+              </div>
+
+              <p>
+                <h6><a data-bs-toggle="collapse" href="#settore_tecnologico" role="button">Indirizzi di studio Settore Tecnico Tecnologico</a></h6>
+              </p>
+              <div class="collapse" id="settore_tecnologico">
+                <ul>
+                  <li><a href="#">Biennio comune</a></li>
+                  <li><a href="#">Chimica, Materiali e Biotecnologie</a></li>
+                  <li><a href="#">Elettronica ed Elettrotecnica</a></li>
+                  <li><a href="#">Informatica e Telecomunicazioni</a></li>
+                  <li><a href="#">Meccanica, Meccatronica ed Energia</a></li>
+                  <li><a href="#">Sistema Moda</a></li>
+                  <li><a href="#">Istruzione degli Adulti</a></li>
+                  <li><a href="#">Agraria, Agroalimentare e Agroindustria (sede Munerati)</a></li>
+                  <li><a href="#">Costruzioni, Ambiente e Territorio (sede Bernini)</a></li>
+                </ul>
+              </div>
+
+              <p>
+                <h6><a data-bs-toggle="collapse" href="#settore_professionale" role="button">Indirizzi di studio Settore Professionale</a></h6>
+              </p>
+              <div class="collapse" id="settore_professionale">
+                <ul>
+                  <li><a href="#">Apparati, impianti e servizi tecnici industriali e civili</a></li>
+                  <li><a href="#">Manutenzione mezzi di trasporto</a></li>
+              </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 d-none d-xl-block">
+                <div id="sidebar" class="shadow">
+                    <form class="d-flex" onsubmit="openModal('https://www.iisviolamarchesini.edu.it/j2/component/search/?searchword=' + document.getElementById('search_bar').value + '&searchphrase=all');">
+                        <input class="form-control me-2" type="search" id="search_bar" placeholder="Cerca">
+                        <button class="btn btn-dark" type="button" onclick="openModal('https://www.iisviolamarchesini.edu.it/j2/component/search/?searchword=' + document.getElementById('search_bar').value + '&searchphrase=all');">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    <h5>Risorse online</h5>
+                    <ul>
+                        <li><a href="https://web.spaggiari.eu/home/app/default/login.php?target=cvv&custcode=ROIT0003">Classeviva</a></li>
+                        <li><a href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&hd=iisviolamarchesini.edu.it">Google Workspace</a></li>
+                        <li><a href="https://web.spaggiari.eu/home/app/default/login.php?target=sct&custcode=ROIT0003">Scuola e Territorio</a></li>
+                    </ul>
+                    <h5>Plessi</h5>
+                    <ul>
+                        <li><a href="#">I.I.S. "Viola-Marchesini"</a></li>
+                        <li><a href="#">ITA "O. Munerati"</a></li>
+                        <li><a href="#">ITG "A. Bernini"</a></li>
+                    </ul>
+                    <h5>Indirizzi di studio Settore Tecnico Tecnologico</h5>
+                    <ul>
+                        <li><a href="#">Biennio comune</a></li>
+                        <li><a href="#">Chimica, Materiali e Biotecnologie</a></li>
+                        <li><a href="#">Elettronica ed Elettrotecnica</a></li>
+                        <li><a href="#">Informatica e Telecomunicazioni</a></li>
+                        <li><a href="#">Meccanica, Meccatronica ed Energia</a></li>
+                        <li><a href="#">Sistema Moda</a></li>
+                        <li><a href="#">Istruzione degli Adulti</a></li>
+                        <li><a href="#">Agraria, Agroalimentare e Agroindustria (sede Munerati)</a></li>
+                        <li><a href="#">Costruzioni, Ambiente e Territorio (sede Bernini)</a></li>
+                    </ul>
+                    <h5>Indirizzi di studio Settore Professionale</h5>
+                    <ul>
+                        <li><a href="#">Apparati, impianti e servizi tecnici industriali e civili</a></li>
+                        <li><a href="#">Manutenzione mezzi di trasporto</a></li>
+                    </ul>
+                    <br>
+              </div>
+            </div>
+            <div class="col-xl-8 col-md-10 col-12">
+                <div style="height: 10px;"></div>
+                <div class="card" id="lightcard">
+                    <div></div>
+                    <div class="card-header text-dark">
+                      <span id="data">GG/MM/AAAA</span>
+                    </div>
+                    <div class="card-body text-dark d-none d-sm-block">
+                        <div class="row">
+                            <div class="col-2 image-container">
+                                <img src="img/logo-repubblica-italiana.png" class="logo-sito">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="text-center text-muted">ISTITUTO DI ISTRUZIONE SUPERIORE</h5>
+                                <h3 class="text-center">I.I.S. VIOLA-MARCHESINI</h3>
+                                <p class="text-center text-muted">
+                                    Via De Gasperi, 21 - 45100 - Rovigo - Tel. 0425/410699 - Fax 0425/35277<br>
+                                    PEC: <a class="text-muted" href="mailto:ROIS012001@pec.istruzione.it" target="_blank">ROIS012001@pec.istruzione.it</a> - Codice Meccanografico: ROIS012001<br>
+                                    Codice Fiscale 80006050290
+                                </p>
+                            </div>
+                            <div class="col-2 image-container">
+                                <img src="img/certiquality.png" class="logo-sito">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 10px;"></div>
+                <div class="alert alert-warning" role="alert">
+                  <a href="" class="text-dark">SICUREZZA E COVID: Si pubblica la documentazione in materia di sicurezza e COVID</a><br>
+                  <a href="" class="text-dark">Risorse utili per la DDI</a>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                      In evidenza
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Calendario prove INVALSI 2022</h5>
+                      <p class="card-text">
+                        Alla pagina <a href="#">https://invalsi-areaprove.cineca.it/index.php?get=static&pag=home_rn</a> è possibile consultare il calendario di svolgimento delle prove <b>INVALSI 2022</b>.
+                      </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                      In evidenza
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Orario provvisorio dal 20/09/2021</h5>
+                      <p class="card-text">
+                        <b>Si pubblica l'orario in vigore dal 20/09/2021 dalle ore 8,00 alle ore 12,00</b> (pausa didattica dalle 9,50 alle 10,10.)<br>
+                        <a href="">Consulta l'orario ITI, ITG e IPIA</a><br>
+                        <a href="">Consulta l'orario ITA</a>
+                        <br><br>
+                        <a href="">Visualizza comunicazione ITI, ITG e IPIA</a><br>
+                        <a href="">Visualizza comunicazione ITA</a>
+                      </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Libri Digitali
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Orario provvisorio dal 20/09/2021</h5>
+                      <p class="card-text">
+                            Per gli studenti con diagnosi DSA, interessati ai libri scolastici in formato digitale, è attivo il servizio.
+                            <b>"LibroAID"</b> relativo all'anno scolastico 2021/2022. Attraverso LibroAID, <b> i libri scolastici in formato digitale (file pdf aperti) vengono erogati agli studenti con diagnosi DSA o certificazione 104/1992 </b>
+                            grazie al protocollo siglato con l'Associazione Italiana Editori (AIE) e alla collaborazione degli editori aderenti al servizio.
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-2">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">PON FSE Studenti</h5>
+                      <a href="#"><img src="img/pon_studenti.png" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">PON 2014-2020</h5>
+                      <a href="#"><img src="img/logo_nuovo_pon.png" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <a href="#"><img src="img/albo_online.png" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <a href="#"><img src="img/trasparenza.png" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <a href="#"><img src="img/comunicati.png" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <a href="#"><img src="img/edcivica.jpg" width="100%;"></a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                      <a href="#"><img src="img/bionet.png" width="100%;"></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div id="footer">
+            <p class="text-center"><a href="#" onclick="openModal('http://www.iubenda.com/privacy-policy/13286193')">Privacy Policy</a></p>
+            <h5 class="text-center text-muted">ISTITUTO DI ISTRUZIONE SUPERIORE</h5>
+            <h3 class="text-center text-muted">I.I.S. VIOLA-MARCHESINI</h3>
+            <p class="text-center text-muted">
+                Via De Gasperi, 21 - 45100 - Rovigo - Tel. 0425/410699 - Fax 0425/35277<br>
+                PEC: <a class="text-muted" href="mailto:ROIS012001@pec.istruzione.it" target="_blank">ROIS012001@pec.istruzione.it</a> - Codice Meccanografico: ROIS012001<br>
+                Codice Fiscale 80006050290
+            </p>
+            <br>
+          </div>
+          <!-- Scripts -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+          <script src="scripts.js"></script>
+    </body>
+</html>
